@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Portfolio</title>
+
+   
+    <meta name="title" content="3D Portfolio">
+    <meta name="description" content="Creative developer passionate about building immersive web experiences with cutting-edge technologies.">
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://3-d-portfolio-xi-six.vercel.app/">
+    <meta property="og:title" content="3D Portfolio">
+    <meta property="og:description" content="Creative developer passionate about building immersive web experiences with cutting-edge technologies.">
+    <meta property="og:image" content="https://3-d-portfolio-xi-six.vercel.app/preview.png">
+
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://3-d-portfolio-xi-six.vercel.app/">
+    <meta property="twitter:title" content="3D Portfolio">
+    <meta property="twitter:description" content="Creative developer passionate about building immersive web experiences with cutting-edge technologies.">
+    <meta property="twitter:image" content="https://3-d-portfolio-xi-six.vercel.app/preview.png">
+
+    
+    <meta name="theme-color" content="#5865F2">
+    <meta property="og:site_name" content="3D Portfolio">
+    
+    
+    <link rel="icon" type="image/png" href="./preview.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+   
+    <canvas id="bg" class="fixed top-0 left-0 -z-10"></canvas>
+
+    
+    <nav class="fixed top-0 w-full z-50 px-8 py-4 perspective-1000" role="navigation" aria-label="Main navigation">
+        <div
+            class="glass-effect max-w-7xl mx-auto transform-style-3d hover:rotate-x-2 transition-transform duration-300">
+            <div class="flex justify-between items-center p-4 nav-content">
+                <div
+                    class="text-2xl font-bold gradient-text transform translate-z-8 hover:translate-z-12 transition-transform">
+                    <a href="#" aria-label="Home">Portfolio</a>
+                </div>
+                <button class="md:hidden nav-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="hidden md:flex space-x-8 nav-links">
+                    <a href="#home"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Home</a>
+                    <a href="#projects"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Projects</a>
+                    <a href="#skills"
+                        class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Skills</a>
+                    <a href="#services"
+                       class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Services</a>
+                    
+                     <a href="#contact"
+                       class="nav-link transform translate-z-8 hover:translate-z-12 transition-all">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  
+    <main class="relative">
+      
+        <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden">
+          
+            <div class="absolute inset-0">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="w-[500px] h-[500px] rounded-full border border-blue-500/20 animate-spin-slow"></div>
+                    <div class="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 
+                                rounded-full border border-purple-500/20 animate-spin-reverse"></div>
+                    <div class="absolute top-1/2 left-1/2 w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2 
+                                rounded-full border border-pink-500/20 animate-pulse"></div>
+                </div>
+            </div>
+
+          
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="particle-container">
+                    <div class="particle bg-blue-500/30 blur-sm"></div>
+                    <div class="particle bg-purple-500/30 blur-sm"></div>
+                    <div class="particle bg-pink-500/30 blur-sm"></div>
+                </div>
+            </div>
+
+           
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center space-y-8">
+                    
+                    <div class="flex items-center">
+                        <div class="image-container">
+                            <img src="/Profile.png" alt="Creative Developer">
+                        </div>
+                        <div class="ml-20">
+                            <h1 class="text-7xl md:text-8xl font-bold tracking-tight mb-14">
+                                <span class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+                                            bg-clip-text text-transparent animate-gradient inline">
+                                    Sylvester Roshan
+                                </span>
+                            </h1>
+                        
+                            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed 
+                                      transform hover:scale-105 transition-transform duration-300">
+                                Crafting immersive digital experiences with cutting-edge technologies
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                  
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-8 ml-48"> 
+                        <!-- Reduced mt-12 to mt-8 (moves up) and increased ml-30 to ml-36 (moves right) -->
+                            <a href="#projects" class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                                rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/25 
+                                transition-all duration-300 hover:-translate-y-1 ml-12">
+                                <div class="absolute inset-0 bg-white/20 group-hover:scale-125 transition-transform duration-500"></div>
+                                <span class="relative flex items-center">
+                                    View Projects
+                                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </a>
+                        
+                            <a href="#contact" class="group px-8 py-4 rounded-xl border border-purple-500/30 
+                                hover:border-purple-500/50 backdrop-blur-sm
+                                transition-all duration-300 hover:-translate-y-1
+                                hover:bg-purple-500/10">
+                                <span class="flex items-center">
+                                    Let's Talk
+                                    <i class="fas fa-comments ml-2 group-hover:rotate-12 transition-transform"></i>
+                                </span>
+                            </a>
+                        </div>
+                        
+                        <div class="flex justify-center gap-6 mt-8 ml-60"> 
+                        <!-- Reduced mt-12 to mt-8 (moves up) and increased ml-20 to ml-28 (moves right) -->
+                            <!-- GitHub -->
+                            <a href="https://github.com/Cric24" target="_blank" class="social-icon-link group">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                    border border-blue-500/30 hover:border-blue-500
+                                    transition-all duration-300 hover:-translate-y-1
+                                    hover:shadow-lg hover:shadow-blue-500/25">
+                                    <i class="fab fa-github text-xl group-hover:scale-110 transition-transform"></i>
+                                </div>
+                            </a>
+                        
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/sylvester-roshan-a2b093314" target="_blank" class="social-icon-link group">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                    border border-purple-500/30 hover:border-purple-500
+                                    transition-all duration-300 hover:-translate-y-1
+                                    hover:shadow-lg hover:shadow-purple-500/25">
+                                    <i class="fab fa-linkedin text-xl group-hover:scale-110 transition-transform"></i>
+                                </div>
+                            </a>
+                        
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/sylvester_roshan873/" target="_blank" class="social-icon-link group">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                    border border-pink-500/30 hover:border-pink-500
+                                    transition-all duration-300 hover:-translate-y-1
+                                    hover:shadow-lg hover:shadow-pink-500/25">
+                                    <i class="fab fa-instagram text-xl group-hover:scale-110 transition-transform"></i>
+                                </div>
+                            </a>
+                        
+                            <!-- Twitter -->
+                            <a href="https://twitter.com/Sylvesterrosha1" target="_blank" class="social-icon-link group">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center
+                                    border border-pink-500/30 hover:border-pink-500
+                                    transition-all duration-300 hover:-translate-y-1
+                                    hover:shadow-lg hover:shadow-pink-500/25">
+                                    <i class="fab fa-twitter text-xl group-hover:scale-110 transition-transform"></i>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+   
+        <section id="projects" class="min-h-screen px-8 py-32">
+            
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+                           bg-clip-text text-transparent">
+                    Featured Projects
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                    Explore my latest work and creative solutions
+                </p>
+            </div>
+
+       
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/assets/Salary Prediction/portfolio1.png" 
+                                alt="Project 1" 
+                                class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110">
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_software-devloper-salary-activity-7252603521974382592-0iPe?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/Software-Developer-Salary-Prediction-Machine-Learning-.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Code
+                                </a>
+                            </div>
+                        </div>
+
+                      
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 
+                                       bg-clip-text text-transparent group-hover:from-blue-500 
+                                       group-hover:to-purple-500 transition-all duration-300">
+                                       
+                                       Software Developer Salary Prediction using Machine Learning
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Developed a Salary Prediction App for Software Developers entails utilizing powerful machine 
+                                learning techniques to improve salary prediction in the IT industry. This emphasizing the transformative power of machine learning 
+                                algorithms in capturing non-linear connections and detailed patterns within salary datasets. System predict software developer salaries based on a number of 
+                                variables, including location, developer type, experience level, and education.
+                            </p>
+
+                          
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Machine Learning
+                                </span>
+                                <span class="tech-pill bg-blue-500/10 text-blue-400 border border-blue-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-blue-500/20 transition-colors">
+                                   Streamlit
+                                </span>
+                               
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Firebase
+                                </span>
+                                <span class="tech-pill bg-purple-500/10 text-purple-400 border border-purple-500/20 
+                                px-3 py-1 rounded-full text-sm hover:bg-purple-500/20 transition-colors">
+                                     Python
+                                 </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                        
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/assets/Movie Recommendation/portfolio2.png" alt="Project 2" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_movie-recommendations-system-activity-7214701648772763648-ZNal?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                       
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 
+                                       bg-clip-text text-transparent group-hover:from-purple-500 
+                                       group-hover:to-pink-500 transition-all duration-300">
+                                       Movie Recommendation System using Machine Learning
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This project is a Movie Recommendation System Where the user will be able to search the movie they like 
+                                then once they click it will show related movies according to the search using Machine Learning.  
+                            </p>
+
+                           
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-purple-500/10 text-purple-400 border border-purple-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-purple-500/20 transition-colors">
+                                    Machine Learning
+                                </span>
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Jupyter Notebook
+                                </span>
+                                <span class="tech-pill bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-indigo-500/20 transition-colors">
+                                    Flask
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+               
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/assets/AI Chatbot/portfolio3.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_chatbot-banking-python-activity-7211664854753910784-4Bvt?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Artificial Intelligence Chatbot System
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                A sophisticated web-based system called the Banking Chatbot System was developed to help 
+                                customers with a variety of banking-related questions. By utilizing cutting-edge technologies, 
+                                this intelligent chatbot makes sure consumers receive timely, accurate, and tailored service. It 
+                                utilizes sophisticated Natural Language Processing (NLP) methods to comprehend user 
+                                inquiries, independent of their phrasing. This feature makes it possible for the chatbot to 
+                                understand natural language context, intent, and subtleties, which makes it easier to provide 
+                                pertinent answers to a range of queries.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Flask
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    OpenAI
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Pyttxxs
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Diabetes/portfolio4.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_machinelearning-flask-python-activity-7212183132643495936-jCaq?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/Diabetes-Flask.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Diabetes Prediction System using Machine Learning
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a Diabetes Prediction System using Machine Learning the user can be able to input the 
+                                relevant data into the system and they will be able to check whether they has the Diabetes or not.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Machine Learning
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Flask
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/E-Book/portfolio11.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_softwaredevelopment-ebook-csharp-activity-7218264344394919936-xJM9?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/E-Book-Pvt.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       E-Book System using ASP.NET MVC
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This E-Book system is developed using ASP.NET MVC this has the functionality such as Customer Login,
+                                Customer Register, Admin Login, Manage Books, Manage Customers, Manage Orders, Generate Reports and Feedback.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    C#
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    ASP.NET MVC
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Heart/portfolio12.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_machinelearning-flask-webdevelopment-activity-7212041080614105089-vyYn?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/Heart-Disease.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Heart Disease Prediction System using Machine Learning
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a Heart Disease Prediction System using Machine Learning the user can be able to input the 
+                                relevant data into the system and they will be able to check whether they has the Heart Disease or not according to
+                                the given data.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Machine Learning
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Flask
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Ball/Port1.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_python-computervision-gaming-activity-7279395427416698880-39T0?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Hand Gesture Ball Escape
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Gesture-Controlled Gameplay that uses your hand movements to guide the glowing ball and dodge neon obstacles.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    OpenCV
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Computer Vision
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Python
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Motion/Port2.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_computervision-pythonprojects-aiinsecurity-activity-7281899188211048448-30Zq?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Motion Detection in Restricted Area
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Detects motion with precision using background subtraction.
+                                Filters out minor movements to focus on critical events.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    OpenCV
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Computer Vision
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Python
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/QR Code/portfolio23.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_python-flask-qrcode-activity-7218974263909695488-sOD9?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/QR-Code-Generator.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       QR Code Generator
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a QR Code Generator where inputted Data or URL will be Converted
+                                as a QR Code and can scan and view additionally the option to download 
+                                the QR Code also implemented.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Flask
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Text Encryptor and Decryptor/portfolio26.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_techinnovation-encryption-flask-activity-7221105631674445824-tNp2?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/Text-Encryptor-and-Decryptor.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Text Encryption and Decryption
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a sleek and modern Text Encryption and Decryption Application. This Tool is designed
+                                to provide secure and user-friendly text encryption and decryption, showcasing advanced design. 
+                             
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Flask
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Course Management system/portfolio28.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_flask-sqlalchemy-python-activity-7221873073380098048-BM3t?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/Course-Management-System.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Course Management system
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a simple Student course Management System built with Flask, SQLAlchemy and flask migrate
+                                with basic CRUD options for respective sectors.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    SQLite
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Flask
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Figma/portfolio32.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_webdevelopment-css-javascript-activity-7222141455044091904-ajSo?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Figma Booking App
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Booking App Design with three pages of first the Home Page of that particular movie with 
+                                choosing date and Reservation once the Reservation is clicked it directs to next page 
+                                with seats Available, Selected and Reserved.
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Real Time Chat/Port3.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_react-firebase-vite-activity-7243232399625531392-5sX0?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Real Time Chat Application
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a instant messaging with real-time updates powered by Firebase Firestore. This is developed using 
+                                Vite + React.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    ReactJs
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                   Firebase
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Socket.io
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                   Vite
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Route Calculation/Portfolio36.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_flask-python-leafletjs-activity-7244388757259390976-HlKv?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Real-Time Traffic Route Calculation System!🌍🚗
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This system provides real-time route calculation with traffic estimations using Flask, LeafletJS, and the OpenStreetMap API.
+                                 Where the user can set custom start and end points on the map to calculate optimal routes.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    API
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Chatbot/Portfolio37.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_linkedin-code-python-activity-7251892924777426945--fyh?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Educational Chatbot
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Interactive Conversations which Engages users with natural language processing to 
+                                provide real-time responses and Offers information about university courses, helping students navigate their option.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Flask
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Social Media App/Portfolio38.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_reactjs-firebase-darkmode-activity-7247916129409470464-fQIC?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Dynamic Social Media App! 🚀
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                This is a React and Firebase-based social media application which integrates email/password authentication, modern UI design with dark mode capabilities, 
+                                and interactive social features like likes and comments.
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    ReactJs
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Firebase
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Vite
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Hotel/portfolio42.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_reactjs-vite-firebase-activity-7260338272915140611-AlXi?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Hotel Booking System Built with React + Vite and Firebase Firestore
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                Fully functional Hotel Booking System designed with an emphasis on user experience, dynamic functionality, and modern styling! Here’s what I’ve integrated to make this application shine
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    ReactJs
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Firebase
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Vite
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Employee Management/portfolio44.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_techinnovation-sqlite-uidesign-activity-7265620757659926528--1dH?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Employee Management System
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                a sleek and modern Employee Management System with a clean UI and robust backend, leveraging SQLite for efficient and lightweight data management
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    SQLite3
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Flask
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/OCR/portfolio45.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_flask-easyocr-pythonprojects-activity-7269707134093692929-qN70?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       OCR System
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                a web-based OCR system powered by Flask and EasyOCR! This application seamlessly extracts text from uploaded images
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Flask
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="Assets/Food/portfolio17.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_foodtech-innovation-uiux-activity-7216025583934205952-5OfE?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Food Ordering System
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                            This System allows users to select the food they need with the search filter and then they can add the foods to the cart and order it.   
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    ReactJs
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Shopping website/portfolio6.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_innovation-management-technology-activity-7213119281662672896-i7WX?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="https://github.com/Cric24/Shopping-Website.git"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       E-Commerce Shopping Website
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                            This is a E-Commerce Shopping Website with the features of categorized products and user can select it accodingly and buy it.    
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    PHP
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    MySQL
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    HTML,CSS and JavaScript
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Ride/Ride.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="#"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                <a href="#"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fab fa-github mr-2"></i>Source
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Ride Share System
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                             This System enables the users to choose the start point and endpoint of the ride in the map which automatically calculate the amount by the distance and requested ride will be accept or decline by the user and has the option to real tim chat with the users for usability with modern stylish UI   
+                            </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill bg-pink-500/10 text-pink-400 border border-pink-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-pink-500/20 transition-colors">
+                                    Python
+                                </span>
+                                <span class="tech-pill bg-rose-500/10 text-rose-400 border border-rose-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-rose-500/20 transition-colors">
+                                    Socket.io
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    SQLite3
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    Stripe 
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                   JavaScript
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    HTML and CSS
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="group">
+                    <div class="glass-effect p-6 rounded-2xl transform-gpu transition-all duration-500 
+                                hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/20 relative 
+                                overflow-hidden backdrop-blur-sm border border-white/10">
+
+                       
+                        <div class="relative h-64 mb-6 rounded-xl overflow-hidden">
+                            <img src="/Assets/Travel/port4.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 
+                                        group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                           
+                            <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 
+                                        group-hover:opacity-100 transition-opacity duration-500">
+                                <a href="https://www.linkedin.com/posts/sylvester-roshan-a2b093314_webdevelopment-travelexplorer-interactivedesign-activity-7287709420166238208-xw86?utm_source=share&utm_medium=member_desktop"
+                                    class="glass-button px-4 py-2 rounded-lg hover:scale-110 transition-transform">
+                                    <i class="fas fa-play mr-2"></i>Demo
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 
+                                       bg-clip-text text-transparent group-hover:from-pink-500 
+                                       group-hover:to-rose-500 transition-all duration-300">
+                                       Travel Explorer UI
+                            </h3>
+
+                            <p class="text-gray-400 line-clamp-3">
+                                this interactive travel platform UI featuring beautiful destinations, curated travel packages, and dynamic features like light/dark mode, seamless navigation, and a professional touch with testimonials and blogs </p>
+
+                            
+                            <div class="flex flex-wrap gap-2">
+                                
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                   JavaScript
+                                </span>
+                                <span class="tech-pill bg-orange-500/10 text-orange-400 border border-orange-500/20 
+                                           px-3 py-1 rounded-full text-sm hover:bg-orange-500/20 transition-colors">
+                                    HTML and CSS
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+            </div>
+
+         
+            
+        </section>
+
+        
+        <section id="skills" class="min-h-screen px-8 py-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
+        
+            <div class="text-center mb-20 relative z-10">
+                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+                           bg-clip-text text-transparent">
+                    Technologies
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                    Tools and technologies I work with
+                </p>
+            </div>
+        
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto relative z-10">
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-blue-500/50">
+                    <div class="text-6xl mb-4 text-blue-500 group-hover:animate-bounce">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">React</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-[90%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Advanced</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-green-500/50">
+                    <div class="text-6xl mb-4 text-green-500 group-hover:animate-bounce">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Node.js</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500 w-[85%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Proficient</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-yellow-500/50">
+                    <div class="text-6xl mb-4 text-yellow-500 group-hover:animate-bounce">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">MongoDB</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-yellow-500 to-orange-500 w-[80%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Intermediate</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-pink-500/50">
+                    <div class="text-6xl mb-4 text-pink-500 group-hover:animate-bounce">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Figma</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-pink-500 to-rose-500 w-[85%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Proficient</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-gray-500/50">
+                    <div class="text-6xl mb-4 text-gray-500 group-hover:animate-bounce">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Git</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-gray-500 to-slate-500 w-[90%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Advanced</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-teal-500/50">
+                    <div class="text-6xl mb-4 text-teal-500 group-hover:animate-bounce">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Flask</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-teal-500 to-cyan-500 w-[80%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Advanced</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-blue-500/50">
+                    <div class="text-6xl mb-4 text-blue-500 group-hover:animate-bounce">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Python</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-[90%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Advanced</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-blue-500/50">
+    <div class="text-6xl mb-4 text-blue-500 group-hover:animate-bounce">
+        <i class="fas fa-robot"></i>
+    </div>
+    <h3 class="text-xl font-bold text-white mb-2">AI / Data Science</h3>
+    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-[80%] 
+                    group-hover:animate-pulse"></div>
+    </div>
+    <p class="text-gray-400 mt-2 text-sm">Intermediate</p>
+</div>
+
+
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-purple-500/50">
+                    <div class="text-6xl mb-4 text-purple-500 group-hover:animate-bounce">
+                        <i class="fab fa-firefox"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Firebase</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[80%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Proficient</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-indigo-500/50">
+                    <div class="text-6xl mb-4 text-indigo-500 group-hover:animate-bounce">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ASP .NET</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-blue-500 w-[75%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Intermediate</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-yellow-500/50">
+                    <div class="text-6xl mb-4 text-yellow-500 group-hover:animate-bounce">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">OpenCV</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-yellow-500 to-orange-500 w-[85%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Advanced</p>
+                </div>
+        
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+                            transform hover:scale-105 border border-white/10 hover:border-red-500/50">
+                    <div class="text-6xl mb-4 text-red-500 group-hover:animate-bounce">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Machine Learning</h3>
+                    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-red-500 to-pink-500 w-[80%] 
+                                    group-hover:animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm">Intermediate</p>
+                </div>
+
+                <div class="glass-effect p-8 rounded-2xl group hover:bg-white/5 transition-all duration-300
+            transform hover:scale-105 border border-white/10 hover:border-blue-500/50">
+    <div class="text-6xl mb-4 text-blue-500 group-hover:animate-bounce">
+        <i class="fas fa-chess"></i>
+    </div>
+    <h3 class="text-xl font-bold text-white mb-2">Chess</h3>
+    <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-[75%] 
+                    group-hover:animate-pulse"></div>
+    </div>
+    <p class="text-gray-400 mt-2 text-sm">Strategic Thinking & Problem Solving</p>
+</div>
+
+            </div>
+        </section>
+        
+
+
+
+        
+        <section class="timeline-section min-h-screen px-8 py-32 relative">
+           
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent"></div>
+            <div class="absolute inset-0 overflow-hidden">
+                <div
+                    class="absolute w-full h-[1px] top-1/2 left-0 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent">
+                </div>
+            </div>
+
+         
+            <div class="text-center mb-20 relative">
+                <h2
+                    class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Education
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                    The path that led me here
+                </p>
+            </div>
+
+          
+            <div class="max-w-6xl mx-auto relative">
+                
+                <div
+                    class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-blue-500/20 via-purple-500/20 to-pink-500/20">
+                </div>
+
+               
+                <div class="space-y-20">
+                    
+                    <div class="relative group">
+                       
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                    w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                                    flex items-center justify-center z-10
+                                    group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold">2025</span>
+                        </div>
+
+                       
+                        <div class="ml-[55%] relative">
+                            <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                       transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                       group-hover:border-blue-500/50">
+                                
+                                <div class="absolute -left-16 top-1/2 transform -translate-y-1/2
+                                            w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10
+                                            flex items-center justify-center">
+                                    <i class="fas fa-graduation-cap text-2xl text-blue-400"></i>
+                                </div>
+
+                               
+                                <h3
+                                    class="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                                    MSc in Data Science
+                                </h3>
+                                <p class="text-gray-400 mb-4">
+                                    Kingston University
+                                </p>
+
+                                
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                        Reading
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="relative group">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                    w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 
+                                    flex items-center justify-center z-10
+                                    group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold">2024</span>
+                        </div>
+
+                        <div class="mr-[55%] relative">
+                            <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                       transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                       group-hover:border-purple-500/50">
+                                <div class="absolute -right-16 top-1/2 transform -translate-y-1/2
+                                            w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-600/10
+                                            flex items-center justify-center">
+                                    <i class="fas fa-user-graduate text-2xl text-purple-400"></i>
+                                </div>
+
+                                <h3
+                                    class="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                                    BEng (Hons) in Software Engineering
+                                </h3>
+                                <p class="text-gray-400 mb-4">
+                                    London Metropolitan University (UK) 
+                                </p>
+
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                        First Class Honours
+                                    </span>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    
+                        <div class="relative group">
+                           
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                        w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                                        flex items-center justify-center z-10
+                                        group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-white font-bold">2023</span>
+                            </div>
+    
+                           
+                            <div class="ml-[55%] relative">
+                                <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                           transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                           group-hover:border-blue-500/50">
+                                    
+                                    <div class="absolute -left-16 top-1/2 transform -translate-y-1/2
+                                                w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10
+                                                flex items-center justify-center">
+                                        <i class="fas fa-scroll text-2xl text-blue-400"></i>
+                                    </div>
+    
+                                   
+                                    <h3
+                                        class="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                                        HND in Software Engineering
+                                    </h3>
+                                    <p class="text-gray-400 mb-4">
+                                        APIIT Kandy Campus
+                                    </p>
+    
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="relative group">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                        w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 
+                                        flex items-center justify-center z-10
+                                        group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-white font-bold">2019</span>
+                            </div>
+    
+                            <div class="mr-[55%] relative">
+                                <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                           transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                           group-hover:border-purple-500/50">
+                                    <div class="absolute -right-16 top-1/2 transform -translate-y-1/2
+                                                w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-600/10
+                                                flex items-center justify-center">
+                                        <i class="fas fa-school text-2xl text-purple-400"></i>
+                                    </div>
+    
+                                    <h3
+                                        class="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                                        G.C.E Advanced Level 
+                                    </h3>
+                                    <p class="text-gray-400 mb-4">
+                                        Commerce Stream
+                                    </p>
+    
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                            Accounting
+                                        </span>
+                                        <span
+                                            class="px-3 py-1 rounded-full text-sm bg-pink-500/10 text-pink-400 border border-pink-500/20">
+                                            ICT
+                                        </span>
+                                        <span
+                                            class="px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                           Economics
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="relative group">
+                           
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                        w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                                        flex items-center justify-center z-10
+                                        group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-white font-bold">2017</span>
+                            </div>
+    
+                           
+                            <div class="ml-[55%] relative">
+                                <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                           transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                           group-hover:border-blue-500/50">
+                                    
+                                    <div class="absolute -left-16 top-1/2 transform -translate-y-1/2
+                                                w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-600/10
+                                                flex items-center justify-center">
+                                        <i class="fas fa-university text-2xl text-blue-400"></i>
+                                    </div>
+    
+                                   
+                                    <h3
+                                        class="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                                        Diploma in Computerized Accounting
+                                    </h3>
+                                    <p class="text-gray-400 mb-4">
+                                        Pearson BTEC
+                                    </p>
+    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+                        <div class="relative group">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                        w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 
+                                        flex items-center justify-center z-10
+                                        group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-white font-bold">2019</span>
+                            </div>
+    
+                            <div class="mr-[55%] relative">
+                                <div class="glass-card p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 
+                                           transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10
+                                           group-hover:border-purple-500/50">
+                                    <div class="absolute -right-16 top-1/2 transform -translate-y-1/2
+                                                w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-600/10
+                                                flex items-center justify-center">
+                                        <i class="fas fa-school text-2xl text-purple-400"></i>
+                                    </div>
+    
+                                    <h3
+                                        class="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                                        G.C.E Ordinary Level
+                                    </h3>
+                                   
+                            </div>
+                        </div>
+
+
+                    <!-- Add more timeline items following the same pattern -->
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-32 relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-20 space-y-4">
+                    <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        Services
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+                        Transforming ideas into exceptional digital experiences
+                    </p>
+                </div>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Web Development -->
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-105 hover:bg-white/10 flex flex-col h-full overflow-hidden">
+                            <div class="mb-6 relative">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                    <i class="fas fa-code text-3xl text-white"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                                Web Development
+                            </h3>
+                            <p class="text-gray-400 mb-6 flex-grow">
+                                Custom web applications built with modern technologies and best practices.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                    Responsive Design
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                    Performance Optimization
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                    SEO Integration
+                                </li>
+                            </ul>
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 hover:from-blue-500/20 hover:to-purple-600/20 border border-white/10 transition-all duration-300 group-hover:border-blue-500/50 text-white">
+                                Learn More
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Machine Learning Solutions -->
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-105 hover:bg-white/10 flex flex-col h-full overflow-hidden">
+                            <div class="mb-6 relative">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-yellow-600 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                    <i class="fas fa-brain text-3xl text-white"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-green-500/20 blur-2xl rounded-full"></div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">
+                                Machine Learning Solutions
+                            </h3>
+                            <p class="text-gray-400 mb-6 flex-grow">
+                                Develop predictive models and AI systems that provide actionable insights and automation.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                                    Predictive Analytics
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                                    Natural Language Processing
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                                    AI-based Automation
+                                </li>
+                            </ul>
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-green-500/10 to-yellow-600/10 hover:from-green-500/20 hover:to-yellow-600/20 border border-white/10 transition-all duration-300 group-hover:border-green-500/50 text-white">
+                                Learn More
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+        
+                   
+        
+                    <!-- Technical Documentation -->
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-105 hover:bg-white/10 flex flex-col h-full overflow-hidden">
+                            <div class="mb-6 relative">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-teal-600 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                    <i class="fas fa-book-open text-3xl text-white"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-indigo-500/20 blur-2xl rounded-full"></div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">
+                                Technical Documentation
+                            </h3>
+                            <p class="text-gray-400 mb-6 flex-grow">
+                                Crafting clear, concise, and comprehensive documentation for software systems, ensuring easy collaboration and understanding.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                    API Documentation
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                                    User Guides
+                                </li>
+                                <li class="flex items-center text-gray-300">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                    System Architecture
+                                </li>
+                            </ul>
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500/10 to-teal-600/10 hover:from-indigo-500/20 hover:to-teal-600/20 border border-white/10 transition-all duration-300 group-hover:border-indigo-500/50 text-white">
+                                Learn More
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Tutoring -->
+<div class="group">
+    <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-105 hover:bg-white/10 flex flex-col h-full overflow-hidden">
+        <div class="mb-6 relative">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-green-600 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                <i class="fas fa-chalkboard text-3xl text-white"></i>
+            </div>
+            <div class="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+            Tutoring Services
+        </h3>
+        <p class="text-gray-400 mb-6 flex-grow">
+            Personalized tutoring in Commerce & ICT, ensuring students excel in exams and gain practical knowledge.
+        </p>
+        <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-300">
+                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                Commerce & ICT Tutoring
+            </li>
+            <li class="flex items-center text-gray-300">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                Exam Preparation & Study Plans
+            </li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500/10 to-green-600/10 hover:from-blue-500/20 hover:to-green-600/20 border border-white/10 transition-all duration-300 group-hover:border-blue-500/50 text-white">
+            Learn More
+            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+    </div>
+</div>
+
+
+<!-- Chess Coaching -->
+<div class="group">
+    <div class="relative p-8 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-105 hover:bg-white/10 flex flex-col h-full overflow-hidden">
+        <div class="mb-6 relative">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                <i class="fas fa-chess-knight text-3xl text-white"></i>
+            </div>
+            <div class="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full"></div>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">
+            Chess Coaching
+        </h3>
+        <p class="text-gray-400 mb-6 flex-grow">
+            Master chess strategy, openings, and game tactics with expert coaching for all skill levels.
+        </p>
+        <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-300">
+                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                Beginner to Advanced Training
+            </li>
+            <li class="flex items-center text-gray-300">
+                <span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                Strategy & Tactics
+            </li>
+            <li class="flex items-center text-gray-300">
+                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                Personalized Coaching Sessions
+            </li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-600/10 hover:from-purple-500/20 hover:to-pink-600/20 border border-white/10 transition-all duration-300 group-hover:border-purple-500/50 text-white">
+            Learn More
+            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="min-h-screen px-8 py-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
+            
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+            </div>
+        
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        Testimonials
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl mt-4">What clients say about my work</p>
+                </div>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 h-full
+                                    transform transition-all duration-500 hover:scale-[1.02]
+                                    hover:border-blue-500/30 hover:bg-white/10">
+                            <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                                <span class="text-7xl text-blue-500/20 font-serif">"</span>
+                            </div>
+                            
+                            <div class="relative">
+                                <p class="text-gray-300 mb-6 italic">
+                                    Exceptional work! The attention to detail and creative solutions provided exceeded our expectations. 
+                                    A true professional who delivers outstanding results.
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                                              flex items-center justify-center text-xl font-bold text-white">
+                                        JD
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-medium">Suresh Gobi</h4>
+                                        <p class="text-gray-400 text-sm"> Block Chain Company</p>
+                                    </div>
+                                    <div class="ml-auto flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 h-full
+                                    transform transition-all duration-500 hover:scale-[1.02]
+                                    hover:border-purple-500/30 hover:bg-white/10">
+                            <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                                <span class="text-7xl text-purple-500/20 font-serif">"</span>
+                            </div>
+                            
+                            <div class="relative">
+                                <p class="text-gray-300 mb-6 italic">
+                                    Incredible talent and professionalism. The project was delivered on time and the results 
+                                    were beyond what we imagined. Highly recommended!
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 
+                                              flex items-center justify-center text-xl font-bold text-white">
+                                        AS
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-medium">Travis Head</h4>
+                                        <p class="text-gray-400 text-sm">Product Manager</p>
+                                    </div>
+                                    <div class="ml-auto flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="group">
+                        <div class="relative p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 h-full
+                                    transform transition-all duration-500 hover:scale-[1.02]
+                                    hover:border-pink-500/30 hover:bg-white/10">
+                            <div class="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                                <span class="text-7xl text-pink-500/20 font-serif">"</span>
+                            </div>
+                            
+                            <div class="relative">
+                                <p class="text-gray-300 mb-6 italic">
+                                    Outstanding development skills and great communication throughout the project. 
+                                    The final product was exactly what we needed.
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 
+                                              flex items-center justify-center text-xl font-bold text-white">
+                                        RJ
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-medium">Robert</h4>
+                                        <p class="text-gray-400 text-sm">Startup Founder</p>
+                                    </div>
+                                    <div class="ml-auto flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="contact" class="min-h-screen px-8 py-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent"></div>
+            
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        Get in Touch
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl mt-4">
+                        Let's create something amazing together
+                    </p>
+                </div>
+
+                <div class="glass-effect p-8 md:p-12 rounded-2xl backdrop-blur-xl border border-white/10 hover:border-blue-500/30 transition-colors">
+                    <form class="space-y-8" novalidate>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="group">
+                                <label for="name" class="block text-gray-400 text-sm mb-2">Name</label>
+                                <div class="relative">
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 outline-none text-white placeholder-gray-500" placeholder="Enter Your Name">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <label for="email" class="block text-gray-400 text-sm mb-2">Email</label>
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 outline-none text-white placeholder-gray-500" placeholder="Enter Your Email">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <label for="subject" class="block text-gray-400 text-sm mb-2">Subject</label>
+                            <div class="relative">
+                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-pink-500/50 focus:ring-2 focus:ring-pink-500/20 transition-all duration-300 outline-none text-white placeholder-gray-500" placeholder="Project Inquiry">
+                                <div class="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <label for="message" class="block text-gray-400 text-sm mb-2">Message</label>
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 outline-none resize-none text-white placeholder-gray-500" placeholder="Your message here..."></textarea>
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity -z-10"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full group relative px-8 py-4 bg-gradient-to-r from-blue-500/80 to-purple-600/80 rounded-xl overflow-hidden transition-all duration-300 hover:from-blue-500 hover:to-purple-600 focus:ring-2 focus:ring-purple-500/20 outline-none">
+                            <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                            <span class="relative flex items-center justify-center font-semibold text-white">
+                                Send Message
+                                <i class="fas fa-paper-plane ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </button>
+                    </form>
+
+                    <div class="mt-12 pt-12 border-t border-white/10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            
+                            <!-- Email Section (Extended Width) -->
+                            <a href="mailto:roshansylvester076@gmail.com" 
+                               class="group flex items-center p-6 rounded-2xl bg-white/5 border border-white/10 
+                                      hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/20 w-full sm:col-span-2">
+                                
+                                <div class="w-16 h-16 flex-shrink-0 rounded-xl bg-blue-500/10 flex items-center justify-center 
+                                            group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope text-blue-400 text-2xl"></i>
+                                </div>
+                                
+                                <div class="ml-5 flex-grow">
+                                    <h4 class="text-white font-medium text-lg">Email</h4>
+                                    <p class="text-gray-400 text-sm break-all">roshansylvester076@gmail.com</p>
+                                </div>
+                                
+                            </a>
+                    
+                            <!-- Location Section (Extended Width) -->
+                            <div class="group flex items-center p-6 rounded-2xl bg-white/5 border border-white/10 
+                                        hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/20 w-full sm:col-span-2">
+                                
+                                <div class="w-16 h-16 flex-shrink-0 rounded-xl bg-purple-500/10 flex items-center justify-center 
+                                            group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-map-marker-alt text-purple-400 text-2xl"></i>
+                                </div>
+                                
+                                <div class="ml-5 flex-grow">
+                                    <h4 class="text-white font-medium text-lg">Location</h4>
+                                    <p class="text-gray-400 text-sm">Nuwara Eliya, Sri Lanka</p>
+                                </div>
+                                
+                            </div>
+                    
+                            <!-- Phone Section (Normal Size) -->
+                            <a href="tel:+94762927826" 
+                               class="group flex items-center p-6 rounded-2xl bg-white/5 border border-white/10 
+                                      hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/20 w-full">
+                                
+                                <div class="w-16 h-16 flex-shrink-0 rounded-xl bg-pink-500/10 flex items-center justify-center 
+                                            group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-phone text-pink-400 text-2xl"></i>
+                                </div>
+                                
+                                <div class="ml-5 flex-grow">
+                                    <h4 class="text-white font-medium text-lg">Phone</h4>
+                                    <p class="text-gray-400 text-sm">+94-76-2927826</p>
+                                </div>
+                                
+                            </a>
+                    
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+    <footer class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <div class="footer-3d-shapes absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">About</h3>
+                    <p class="text-gray-400 mb-6">Creative developer passionate about building immersive web experiences with cutting-edge technologies.</p>
+                    <div class="flex space-x-4">
+                        <!-- GitHub -->
+                        <a href="https://github.com/Cric24" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-colors group">
+                            <i class="fab fa-github text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                        </a>
+                    
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/sylvester-roshan-a2b093314" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-colors group">
+                            <i class="fab fa-linkedin text-gray-400 group-hover:text-purple-400 transition-colors"></i>
+                        </a>
+                    
+                        <!-- Twitter -->
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 hover:border-pink-500/50 hover:bg-white/10 transition-colors group">
+                            <i class="fab fa-twitter text-gray-400 group-hover:text-pink-400 transition-colors"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#home" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Skills
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform"></span>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center mr-3 border border-white/10 group-hover:border-pink-500/50 transition-colors">
+                                <i class="fas fa-envelope text-sm group-hover:text-pink-400 transition-colors"></i>
+                            </div>
+                            <a>roshansylvester076@gmail.com</a>
+                        </li>
+                        <li class="flex items-center text-gray-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center mr-3 border border-white/10 group-hover:border-pink-500/50 transition-colors">
+                                <i class="fas fa-map-marker-alt text-sm group-hover:text-pink-400 transition-colors"></i>
+                            </div>
+                            <span>Nuwara-Eliya, Srilanka </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">&copy; 2024 Sylvester Roshan. All rights reserved.</p>
+                    <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+</html>
